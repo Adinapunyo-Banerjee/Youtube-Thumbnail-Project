@@ -44,9 +44,9 @@
             <a href="#" class="max-sm:max-md:hidden" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">About</a>
 
             {% if user.is_authenticated %}
-                <a href="#" class="border px-2 py-1 rounded-md bg-opacity-0 bg-red-400 border-opacity-80 border-[2.125px] border-red-400 duration-150 active:bg-opacity-50" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user-check" title="{{ user.email }}"></i> Logout</a>
+                <a href="/accounts/logout" class="border px-2 py-1 rounded-md bg-opacity-0 bg-red-400 border-opacity-80 border-[2.125px] border-red-400 duration-150 active:bg-opacity-50" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user-check" title="{{ user.email }}"></i> Logout</a>
             {% else %}
-                <a href="#" class="border border-0 px-2 py-1 rounded-md bg-opacity-80 border-opacity-80 border-red-400 bg-red-400 shadow-md shadow-red-400/50 duration-150 hover:shadow-xl hover:shadow-red-400/50 active:bg-opacity-100" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user"></i> Login</a>
+                <a href="/accounts/login" class="border border-0 px-2 py-1 rounded-md bg-opacity-80 border-opacity-80 border-red-400 bg-red-400 shadow-md shadow-red-400/50 duration-150 hover:shadow-xl hover:shadow-red-400/50 active:bg-opacity-100" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user"></i> Login</a>
             {% endif %}
             
         </div>
@@ -62,5 +62,9 @@
             Copyright© Thumbnails Project
         </div>
     </footer>
+
+    {% block js %}
+    {% endblock %}
+
 </body>
 </html>
