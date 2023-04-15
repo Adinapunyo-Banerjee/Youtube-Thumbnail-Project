@@ -1,11 +1,13 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>{% block title %} {% endblock %}</title>
+    
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +17,24 @@
 
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/5c2d098959.js" crossorigin="anonymous"></script>
+
+    <!-- Loading Base CSS -->
+    <link rel="stylesheet" href="{%static '/css/base.css' %}">
+
+    <!-- Loading additional CSS -->
+    {% block css %}
+    {% endblock %}
+
 </head>
 <body background="files/download.jpg" style="background-repeat: no-repeat; background-size: cover;" class="bg-slate-900">
+
+
     <nav class="text-sm sticky top-0 flex flex-row gap-3 px-3 py-2 justify-between shadow-md h-full w-full bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 items-center">
         <div class="sm:hidden text-white px-2">
             <i class="fa-solid fa-bars"></i>
         </div>
         <div class="max-sm:max-md:items-center items-center flex flex-row gap-2 text-white">
-            <img src="Files/logo_clickrate.svg" style="width:20px;height:20px;">
+            <img src="{%static '/logo.svg' %}" style="width:20px;height:20px;">
             <a href="#" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Name</a>
         </div>
         <div class="font-sans flex flex-row gap-3 items-center text-white">
@@ -30,16 +42,23 @@
             <a href="#" class="max-sm:max-md:hidden" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Try</a>
             <a href="#" class="max-sm:max-md:hidden" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">About</a>
 
-            <a href="#" class="border border-0 px-2 py-1 rounded-md bg-opacity-80 border-opacity-80 border-red-400 bg-red-400 shadow-md shadow-red-400/50 duration-150 hover:shadow-xl hover:shadow-red-400/50 active:bg-opacity-100" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user"></i> Login</a>
-            <!-- <a href="#" class="border px-2 py-1 rounded-md bg-opacity-0 bg-red-400 border-opacity-80 border-[2.125px] border-red-400 duration-150 active:bg-opacity-50" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user-check"></i> Logout</a> -->
+            {% if user.is_authenticated %}
+                <a href="#" class="border px-2 py-1 rounded-md bg-opacity-0 bg-red-400 border-opacity-80 border-[2.125px] border-red-400 duration-150 active:bg-opacity-50" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user-check" title="{{ user.email }}"></i> Logout</a>
+            {% else %}
+                <a href="#" class="border border-0 px-2 py-1 rounded-md bg-opacity-80 border-opacity-80 border-red-400 bg-red-400 shadow-md shadow-red-400/50 duration-150 hover:shadow-xl hover:shadow-red-400/50 active:bg-opacity-100" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user"></i> Login</a>
+            {% endif %}
+            
         </div>
     </nav>
-    <div class="max-sm:max-md:px-5 px-16 py-5" style="font-family: 'Quicksand', sans-serif;">
-        Body text here!
+
+
+    <div class="max-sm:max-md:px-5 px-16 py-5 text-white" style="font-family: 'Quicksand', sans-serif;">
+        {% block content %}
+        {% endblock %}
     </div>
     <footer class="bg-neutral-900 text-white text-center py-6 relative bottom-0 left-0 w-full text-sm">
         <div>
-            Copyright© Thumbnail Project
+            Copyright© Thumbnails Project
         </div>
     </footer>
 </body>
