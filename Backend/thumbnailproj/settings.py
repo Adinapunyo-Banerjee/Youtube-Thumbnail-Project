@@ -173,3 +173,13 @@ EMAIL_HOST_USER = 'adinapunyo@gmail.com'  #new
 EMAIL_HOST_PASSWORD = "astrlpnzaoiflxdt" #new
 EMAIL_USE_TLS = True #new
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+SOCIALACCOUNT_LOGIN_ON_GET=True     #This is used to directly login to social accounts without second verification
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+        messages.DEBUG: 'debug',
+        messages.INFO: 'info',
+        messages.SUCCESS: 'success',
+        messages.WARNING: 'warning',
+        messages.ERROR: 'error',
+ }
