@@ -174,6 +174,7 @@ EMAIL_HOST_PASSWORD = "astrlpnzaoiflxdt" #new
 EMAIL_USE_TLS = True #new
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 SOCIALACCOUNT_LOGIN_ON_GET=True     #This is used to directly login to social accounts without second verification
+ACCOUNT_LOGOUT_ON_GET=True      #This field is used to directly logout from the website
 
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
