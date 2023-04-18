@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="/assets/logo-95c1f948.svg" type="image/x-icon">
 
     <!-- Base CSS -->
-    <link rel="stylesheet" href="dist/assets/base.css">
+    <!-- <link rel="stylesheet" href="dist/assets/base.css"> -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,17 +24,44 @@
     <!-- Additional CSS -->
     
 
-  <link rel="stylesheet" href="/assets/index-cc593a41.css">
+  <link rel="stylesheet" href="/assets/index-2e050001.css">
 </head>
 
 <body background="files/6.jpg" style="background-repeat: no-repeat; background-size: cover;"
     class="bg-slate-900">
-    
+    <nav class="text-md sticky top-0 flex flex-row gap-3 px-3 py-2 justify-between shadow-md h-full w-full bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 items-center" style=" z-index: 99999;">
+        <div class="sm:hidden text-white px-2" onclick="showMobileNav()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="max-sm:max-md:items-center items-center flex flex-row gap-2 text-white">
+            <img src="/assets/logo-95c1f948.svg" style="width:20px;height:20px;">
+            <a href="#" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Name</a>
+        </div>
+        <div class="font-sans flex flex-row gap-3 items-center text-white">
+            <a href="#" class="max-sm:max-md:hidden"
+                style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Home</a>
+            <a href="#" class="max-sm:max-md:hidden"
+                style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Try</a>
+            <a href="#" class="max-sm:max-md:hidden"
+                style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">About</a>
+
+            <a href="#"
+                class=" border-0 px-2 py-1 rounded-md bg-opacity-80 border-opacity-80 border-red-400 bg-red-400 shadow-md shadow-red-400/50 duration-150 hover:shadow-xl hover:shadow-red-400/50 active:bg-opacity-100"
+                style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i
+                    class="fa-solid fa-user"></i> Login</a>
+            <!-- <a href="#" class="border px-2 py-1 rounded-md bg-opacity-0 bg-red-400 border-opacity-80 border-[2.125px] border-red-400 duration-150 active:bg-opacity-50" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user-check"></i> Logout</a> -->
+        </div>
+        <div class="text-sm text-white top-14 border-2 px-3 py-2 rounded-md bg-white-900 text-opacity-80 gap-4 border-opacity-70" style="position: absolute; display: none;" id="mobileNav">
+            <a href="#" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Home</a>
+            <a href="#" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Try</a>
+            <a href="#" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">About</a>
+        </div>
+    </nav>
 
 
 
-    <div class="max-sm:max-md:px-5 px-16 pb-28 py-5" style="font-family: 'Quicksand', sans-serif;">
-        <div class="px-96 py-28 text-slate-300">
+    <div class="relative z-0 max-sm:max-md:px-2 px-4 pb-28 py-5" style="font-family: 'Quicksand', sans-serif;">
+        <div class="max-sm:max-md:w-[80%] w-1/2 mx-auto py-28 max-sm:max-md:px-2 text-slate-300">
             <div class="rounded-2xl top-0 flex flex-col px-3 py-2 justify-between h-full w-full bg-cyan-700 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 items-center shadow-cyan-300/20 shadow-[0px_0px_20px_10px_#5a67d8]">
                 <h1 class="text-center w-full font-bold text-2xl mt-4">Sign in!</h1>
 
@@ -44,7 +71,7 @@
                 <h2 class="bg-green-800 rounded-lg py-1 my-1 px-3 bg-opacity-70 text-center max-w-max text-md pt-2"><i class="fa-solid fa-circle-check"></i> You have successfully logged in!</h2>
 
                 <h2 class="text-center w-full text-md pt-2">You make great videos. Don't let people scroll past it!</h2>
-                <form class="w-1/2 flex flex-col" action="" method="post">
+                <form class="w-1/2 max-sm:max-md:min-w-max flex flex-col" action="" method="post">
 
                     {% csrf_token %}
 
@@ -80,7 +107,23 @@
 
 
 
-    
+    <footer class="bg-neutral-900 text-white text-center py-6 relative bottom-0 left-0 w-full text-sm">
+        <div>
+            Copyright© Thumbnail Project
+        </div>
+    </footer>
+
+    <script>
+        function showMobileNav()
+        {
+            var btn = document.getElementById("mobileNav");
+        if (window.getComputedStyle(btn).display === "none") {
+            btn.style.display = "flex";
+        } else {
+            btn.style.display = "none";
+        }
+    }
+    </script>
 </body>
 
 </html>
