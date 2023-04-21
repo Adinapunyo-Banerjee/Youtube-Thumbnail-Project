@@ -28,16 +28,14 @@
     {% endblock %}
 
 </head>
-<body background="{% block bg %}{% endblock %}" style="background-repeat: no-repeat; background-size: cover;" class="bg-slate-900">
-
-
-    <nav class="text-sm sticky top-0 flex flex-row gap-3 px-3 py-2 justify-between shadow-md h-full w-full bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 items-center" style="z-index: 99999;">
+<body background="{% block bg %}{% endblock %}" style="background-repeat: no-repeat; background-size: cover; background-position: center;" class="bg-slate-900">
+    <nav class="text-md sticky top-0 flex flex-row gap-3 px-3 py-2 justify-between shadow-md h-full w-full bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 items-center" style="z-index: 99999;">
         <div class="sm:hidden text-white px-2" onclick="showMobileNav()">
             <i class="fa-solid fa-bars"></i>
         </div>
         <div class="max-sm:max-md:items-center items-center flex flex-row gap-2 text-white">
             <img src="{%static '/logo.svg' %}" style="width:20px;height:20px;">
-            <a href="/" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Name</a>
+            <a href="/" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Virality Toolkit</a>
         </div>
         <div class="font-sans flex flex-row gap-3 items-center text-white">
             <a href="/" class="max-sm:max-md:hidden" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Home</a>
@@ -74,11 +72,6 @@
         {% block content %}
         {% endblock %}
     </div>
-    <footer class="bg-neutral-900 text-white text-center py-6 relative bottom-0 left-0 w-full text-sm">
-        <div>
-            Copyright© Thumbnails Project
-        </div>
-    </footer>
 
     {% block js %}
     {% endblock %}
@@ -94,5 +87,14 @@
         }
     }
     </script>
+
+    <footer class="bg-neutral-900 text-white text-center py-6 relative bottom-0 left-0 w-full text-sm rounded-md">
+    <div>
+        Copyright© Thumbnail Project
+    </div>
+    <div>
+        <a href="https://www.freepik.com/free-photo/content-service-internet-online-editorial-connection_1235345.htm#query=Phone%20with%20youtube%20on%20the%20screen%20while%20an%20person%20using%20a%20computer&position=3&from_view=search&track=ais">Hero Image by ijeab</a> on Freepik
+    </div>
+</footer>
 </body>
 </html>

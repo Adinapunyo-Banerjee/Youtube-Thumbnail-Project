@@ -26,8 +26,7 @@
 
 </head>
 
-<body background="files/6.jpg" style="background-repeat: no-repeat; background-size: cover;"
-    class="bg-slate-900">
+<body background="files/yt3.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: center;" class="bg-slate-900">
     
     <nav class="text-md sticky top-0 flex flex-row gap-3 px-3 py-2 justify-between shadow-md h-full w-full bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 items-center" style=" z-index: 99999;">
         <div class="sm:hidden text-white px-2" onclick="showMobileNav()">
@@ -35,7 +34,7 @@
         </div>
         <div class="max-sm:max-md:items-center items-center flex flex-row gap-2 text-white">
             <img src="Files/logo.svg" style="width:20px;height:20px;">
-            <a href="#" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Name</a>
+            <a href="#" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Virality Toolkit</a>
         </div>
         <div class="font-sans flex flex-row gap-3 items-center text-white">
             <a href="#" class="max-sm:max-md:hidden"
@@ -60,56 +59,79 @@
 
 
 
-    <div class="relative z-0 max-sm:max-md:px-2 px-4 pb-28 py-5" style="font-family: 'Quicksand', sans-serif;">
-        <div class="max-sm:max-md:w-[80%] w-1/2 mx-auto py-28 max-sm:max-md:px-2 text-slate-300">
-            <div class="rounded-2xl top-0 flex flex-col px-3 py-2 justify-between h-full w-full bg-cyan-700 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 items-center shadow-cyan-300/20 shadow-[0px_0px_20px_10px_#5a67d8]">
-                <h1 class="text-center w-full font-bold text-2xl mt-4">Sign in!</h1>
-
-                <!-- Messages -->
-                <h2 class="bg-rose-800 rounded-lg py-1 my-1 px-3 bg-opacity-70 text-center max-w-max text-md pt-2"><i class="fa-solid fa-triangle-exclamation"></i> The e-mail or password entered is incorrect!</h2>
-
-                <h2 class="bg-green-800 rounded-lg py-1 my-1 px-3 bg-opacity-70 text-center max-w-max text-md pt-2"><i class="fa-solid fa-circle-check"></i> You have successfully logged in!</h2>
-
-                <h2 class="text-center w-full text-md pt-2">You make great videos. Don't let people scroll past it!</h2>
-                <form class="w-1/2 max-sm:max-md:min-w-max flex flex-col" action="" method="post">
-
-                    {% csrf_token %}
-
-                    <input name="login" autocomplete="email" id="id_login" class="px-4 py-1 my-4 rounded-md bg-transparent border-slate-400 border-2 active:shadow-md duration-500" type="email" placeholder="e-mail">
-
-                    <input name="password" autocomplete="current-password" id="id_password" class="px-4 py-1 mb-4 rounded-md bg-transparent border-slate-400 border-2 duration-500" type="password" placeholder="password">
-                    
-                    <div class="pb-1 w-full text-center align-middle">
-                        <input type="checkbox" name="remember" id="id_remember"> Remember me
+    <div class="max-sm:max-md:px-5 px-16 py-5 mt-7 text-white" style="font-family: 'Quicksand', sans-serif;">
+        <div class="flex flex-col gap-[20vh]">
+            <div class="rounded-2xl top-0 flex flex-col max-sm:max-md:px-2 py-5 justify-between h-full w-full bg-cyan-700 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 items-center shadow-cyan-300/20 shadow-[0px_0px_10px_5px_#5a67d8]">
+                <div class="max-sm:max-md:flex-col flex flex-row items-center">
+                    <div class="w-1/2 px-12 max-sm:max-md:px-7 flex flex-col gap-2 max-sm:max-md:w-[95%]">
+                        <div class="max-sm:max-md:hidden items-center flex flex-row gap-2 text-white">
+                            <img src="Files/logo.svg" style="width:20px;height:20px;">
+                            <a href="#" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;">Virality Toolkit</a>
+                        </div>
+                        <div class= "text-5xl max-sm:max-md:text-4xl font-bold">
+                            Rate your thumbnail before you upload using an AI!
+                        </div>
+                        <div class= "text-xl">
+                            Virality Toolkit (Beta) rates your YouTube thumbnail for engagement and views!
+                        </div>
+                        <div class="mt-3 mb-3">
+                            <a href="#" class="text-center border-0 px-3 py-2 rounded-md bg-opacity-80 border-opacity-80 border-green-400 bg-green-400 shadow-md shadow-green-400/50 duration-150 hover:shadow-xl hover:shadow-green-400/50 active:bg-opacity-100" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-rocket"></i> Get Started!</a>
+                        </div>
                     </div>
-                    
-
-                    <a href="{% url 'account_reset_password' %}" class="my-0 text-center" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-skull"></i> Forgot Password?</a>
-
-                    <div class="my-2 items-center flex flex-row w-full">
-
-                        <button href="#" type="submit" class="mr-1 w-1/2 px-4 py-[0.14rem] rounded-md bg-opacity-0 bg-red-400 border-opacity-80 border-[2.125px] border-red-400 duration-150  active:bg-opacity-50 text-center" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user-plus"></i> Login</button>
-    
-                        <button href="{{ signup_url }}" class="ml-1 w-1/2 text-center border-0 px-4 py-1 rounded-md bg-opacity-80 border-opacity-80 border-red-400 bg-red-400 duration-150 hover:shadow-red-400/50 hover:shadow-[0px_0px_10px_5px_#5a67d8] active:bg-opacity-100" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-user"></i> Signup</button>
-    
+                    <div class="max-sm:max-md:hidden w-1/2 pr-7">
+                        <img class="rounded-md opacity-90" src="files/yt5.jfif" alt="" srcset="">
                     </div>
+                </div>
+            </div>
 
-                </form>
-                
-                
-                
+            <div class="max-sm:max-md:px-2 rounded-2xl top-0 flex flex-col px-10 py-5 justify-between h-full w-full bg-cyan-700 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 items-center shadow-cyan-300/20 shadow-[0px_0px_10px_5px_#5a67d8]">
+                <div class="max-sm:max-md:flex-col flex flex-row items-center">
+                    <div class="w-1/2 max-sm:max-md:hidden">
+                        <img class="rounded-md opacity-80" src="files/yt4.jfif" alt="" srcset="">
+                    </div>
+                    <div class="max-sm:max-md:w-[95%] w-1/2 px-7 flex flex-col gap-2">
+                        <div class= "text-5xl max-sm:max-md:text-4xl font-bold">
+                            Trained on over 25 thousand thumbnails.
+                        </div>
+                        <div class= "text-xl">
+                            Welcome to the first release of Virality Toolkit! Expectations are high, experimentations are on...
+                        </div>
+                        <div class="mt-3 mb-3">
+                            <a href="#" class="text-center border-0 px-3 py-2 rounded-md bg-opacity-80 border-opacity-80 border-blue-400 bg-blue-400 shadow-md shadow-blue-400/50 duration-150 hover:shadow-xl hover:shadow-blue-400/50 active:bg-opacity-100" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-circle-play"></i> Take a tour!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <a href="{% provider_login_url 'google' %}" class="w-1/2 text-center border-0 px-4 py-1 mt-2 mb-5 rounded-md bg-opacity-80 border-opacity-80 border-blue-400 bg-blue-400 duration-150 hover:shadow-blue-400/50 hover:shadow-[0px_0px_10px_5px_#5a67d8] active:bg-opacity-100" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-brands fa-google"></i> Login/Signup with Google
-                </a>
+            <div class="max-sm:max-md:px-2 mb-[20vh] rounded-2xl top-0 flex flex-col px-10 py-5 justify-between h-full w-full bg-cyan-700 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 items-center shadow-cyan-300/20 shadow-[0px_0px_10px_5px_#5a67d8]">
+                <div class="max-sm:max-md:flex-col flex flex-row items-center">
+                    <div class="w-1/2 max-sm:max-md:w-[95%] px-7 flex flex-col gap-2">
+                        <div class= "text-5xl max-sm:max-md:text-4xl font-bold">
+                            CTR is the king!
+                        </div>
+                        <div class= "text-xl">
+                            In this new era of youtube, the Click Through Rate makes the difference between Virality and Oblivion. Let us help you get the views you need...
+                        </div>
+                        <div class="mt-3 mb-3">
+                            <a href="#" class="text-center border-0 px-3 py-2 rounded-md bg-opacity-80 border-opacity-80 border-green-400 bg-green-400 shadow-md shadow-green-400/50 duration-150 hover:shadow-xl hover:shadow-green-400/50 active:bg-opacity-100" style="font-family: 'Nunito', sans-serif; font-family: 'Quicksand', sans-serif;"><i class="fa-solid fa-rocket"></i> Get Started!</a>
+                        </div>
+                    </div>
+                    <div class="w-1/2 max-sm:max-md:hidden">
+                        <img class="rounded-md opacity-80" src="files/yt6.jfif" alt="" srcset="">
+                    </div>
+                </div>
             </div>
         </div>
+        
+
     </div>
-
-
 
     <footer class="bg-neutral-900 text-white text-center py-6 relative bottom-0 left-0 w-full text-sm">
         <div>
             Copyright© Thumbnail Project
+        </div>
+        <div>
+            <a href="https://www.freepik.com/free-photo/content-service-internet-online-editorial-connection_1235345.htm#query=Phone%20with%20youtube%20on%20the%20screen%20while%20an%20person%20using%20a%20computer&position=3&from_view=search&track=ais">Hero Image by ijeab</a> on Freepik
         </div>
     </footer>
 
