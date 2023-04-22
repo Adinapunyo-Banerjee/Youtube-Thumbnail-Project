@@ -60,6 +60,10 @@
 
 
     <div class="max-sm:max-md:px-5 px-16 py-5 mt-7 text-white" style="font-family: 'Quicksand', sans-serif;">
+
+        <h2 id="dismiss" class="duration-300 absolute left-0 right-0 ml-auto mr-auto z-10 top-[10vh] w-1/3 max-sm:max-md:w-2/3    bg-rose-800 rounded-lg py-1 px-3 bg-opacity-70 text-center text-md"><i class="fa-solid fa-triangle-exclamation"></i> You have successfully logged in! <i class="fa-solid fa-xmark" onclick="messageDismiss()"></i></h2>
+
+
         <div class="flex flex-col gap-[20vh]">
             <div class="rounded-2xl top-0 flex flex-col max-sm:max-md:px-2 py-5 justify-between h-full w-full bg-cyan-700 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 items-center shadow-cyan-300/20 shadow-[0px_0px_10px_5px_#5a67d8]">
                 <div class="max-sm:max-md:flex-col flex flex-row items-center">
@@ -143,8 +147,15 @@
             btn.style.display = "flex";
         } else {
             btn.style.display = "none";
+            }
         }
-    }
+
+        function messageDismiss()
+        {
+            var btn = document.getElementById("dismiss");
+            btn.style.top = "0"
+            btn.style.display = "none"
+        }
     </script>
 </body>
 
